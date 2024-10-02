@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<style>
+    .form-control{
+    height:50px;
+    color:gray;
+    border-radius: 10px !important;
+    box-shadow:1px 1px 10px gray inset;
+    }
+    .input-group-text{
+    height:50px;
+    border-radius:10px;
+    background:white;
+    color:#a1887f;
+    box-shadow:2px 2px 15px #a1887f;
+    }
+    .registration-form{
+    border:1px solid white;
+    border-radius:15px;
+    box-shadow:8px 8px 10px black;
+    }
+    .registration-button{
+    background:#a1887f;
+    color:white;
+    font-size:20px;
+    border:none !important;
+    box-shadow:2px 2px 5px black;
+    }
+</style>
+<!--start heading-->
+<div class="row my-3">
+    <div class="col-sm-5 mx-auto text-center">
+        <p class="fs-3">Customer <b class="txt-color1">Registration</b></p>
+    </div>
+</div>
+<!--end heading-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 p-5 mb-5 registration-form bg-mycolor3">
+            <form method="post" autocomplete="off" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row mt-3">
+                    <div class="col-sm-6">
+                        <div class="input-group flex-nowrap">
+                          <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                          <input name="name" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group flex-nowrap">
+                          <span class="input-group-text"><i class="fa-solid fa-envelope iconic"></i></span>
+                          <input name="email" type="email" class="form-control" placeholder="Enter Your Email" aria-label="Username" aria-describedby="addon-wrapping">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-sm-6">
+                        <div class="input-group flex-nowrap">
+                          <span class="input-group-text" ><i class="fa-solid fa-phone"></i></span>
+                          <input name="mobile" type="number" class="form-control" placeholder="Contact No." aria-label="Username" aria-describedby="addon-wrapping">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group flex-nowrap">
+                          <span class="input-group-text" ><i class="fa-solid fa-location-crosshairs"></i></span>
+                          <input name="pincode" type="number" class="form-control" placeholder="Pincode" aria-label="Username" aria-describedby="addon-wrapping">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                <div class="col-sm-6">
+                    <div class="input-group flex-nowrap">
+                      <span class="input-group-text" ><i class="fa-solid fa-city"></i></span>
+                      <input name="city" type="text" class="form-control" placeholder="City" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-group flex-nowrap">
+                      <span class="input-group-text" ><i class="fa-solid fa-lock"></i></span>
+                      <input name="passwd" type="password" class="form-control" placeholder="Enter Your password" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                </div>
+                </div>
+                <div class="row mt-3">
+                <div class="col-sm-6">
+                    <div class="input-group flex-nowrap">
+                      <span class="input-group-text" ><i class="fa-solid fa-file"></i></span>
+                      <input name="fu" type="file" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="input-group flex-nowrap">
+                      <span class="input-group-text" ><i class="fa-solid fa-location-dot"></i></span>
+                      <textarea name="address" class="form-control" placeholder="Enter your Address..."></textarea>
+                    </div>
+                </div>
+                </div>
+                <div class="row mt-3">
+                <div class="col-sm-6">
+                      <input type="submit" class="form-control w-50 registration-button" value="Register Now" style="background:var(--bgcolor2) !important;">
+                </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+{% endblock %}

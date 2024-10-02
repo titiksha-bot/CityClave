@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet"/>
+    <link href="{% static 'css/all.css'%}" rel="stylesheet"/>
+    <style>
+        :root
+        {
+        --bgcolor1:#FF9800;
+        --bgcolor2:#A1887F;
+        --bgcolor3:#9E9E9E;
+        }
+        .bg-mycolor1
+        {
+        background:var(--bgcolor1);
+        }
+        .bg-mycolor2
+        {
+        background:var(--bgcolor2);
+        }
+        .bg-mycolor3
+        {
+        background:var(--bgcolor3);
+        }
+        .txt-color1
+        {
+        color:var(--bgcolor1);
+        }
+        .txt-color2
+        {
+        color:var(--bgcolor2);
+        }
+        .txt-color3
+        {
+        color:var(--bgcolor3);
+        }
+        .t1 a
+        {
+        text-decoration:none;
+        color:white;
+        }
+        .t1
+        {
+        font-size:14px;
+        }
+        .menu{
+        box-shadow:0px 2px 30px 8px black;
+        }
+        .ic
+        {
+        border:1px solid white;
+        height:20px;
+        width:20px;
+        text-align:center;
+        line-height:20px;
+        border-radius:1px;
+        transition: all .5s;
+        }
+        .ic:hover
+        {
+        border:1px solid var(--bgcolor3);
+        color:var(--bgcolor3);
+        transform:rotate(360deg);
+        transition: all .5s;
+        }
+        #menu
+        {
+        background:transparent !important;
+        }
+        #menu ul li a
+        {
+        color:white;
+        }
+        .ufooter{
+        min-height:300px;
+        background:var(--bgcolor2);
+        margin-top:50px;
+        box-shadow:0px -8px 15px black;
+        }
+        .bfooter{
+        background:black;
+        color:white;
+        text-align:center;
+        margin-top:1px;
+        }
+        .button-photo{
+        height:100px;
+        }
+        .contact-button{
+        background:transparent;
+        box-shadow: 2px 0px 10px 3px beige;
+        padding:10px 15px;
+        font-size:15px;
+        font-weight:bold;
+        transition:all 1s;
+        }
+        .box{
+        text-shadow:0px 1px 1px beige;
+        }
+        .imgzoom{
+        transition:all ease 1s;
+        }
+        .imgzoom:hover{
+        transform:scale(1.1);
+        transition:all ease 1s;
+        }
+        .contact-button:hover{
+        color:white;
+        background:black;
+        transition:all 1s;
+        }
+    </style>
+</head>
+<body style="background:beige">
+ <div class="container-fluid">
+    <div class="row t1 bg-mycolor2 text-light text-center py-1">
+        <div class="col-sm-3">
+            <a href="#">FAQs</a> |
+            <a href="#">About Us</a> |
+            <a href="#">Contact & Support</a>
+        </div>
+        <div class="col-sm-3">
+            <i class="fa-solid fa-phone fa-spin"></i>
+            +91 7985984543, +91 8707269983
+        </div>
+        <div class="col-sm-3">
+            <i class="fa-regular fa-envelope fa-solid fa-1x"></i>
+            titiksha638@gmail.com
+            <!--{{ request.session.email }}-->
+        </div>
+        <div class="col-sm-3">
+            <i class="fa-brands fa-facebook fa-x"></i>
+            <i class="fa-brands fa-twitter fa-x"></i>
+            <i class="fa-brands fa-youtube fa-x"></i>
+            <i class="fa-brands fa-instagram fa-x"></i>
+            <i class="fa-brands fa-linkedin fa-x"></i>
+        </div>
+    </div>
+    <div class="row t2 py-2 mt-0 bg-dark">
+        <div class="col-sm-3 fs-2 ps-5 text-light box">
+            <i class="fa-solid fa-city fa-bounce fa-2x" style="color: #ff9800;"></i> City<b class="txt-color1">CLAVE</b>
+        </div>
+        <div class="col-sm-3 text-center text-light">
+            <b>Heading</b><br/>
+            Heading title
+        </div>
+        <div class="col-sm-3 text-center text-light">
+            <b>Heading</b><br/>
+            Heading title
+        </div>
+        <div class="col-sm-3 text-center pe-5 pt-2">
+            {% if not request.session.email %}
+            <i class="fa-solid fa-user fa-2x mt-2" style="color: #9e9e9e;"></i>&nbsp;
+            <b class="text-secondary fs-5">Y User</b>
+            {% else %}
+            &nbsp;
+            <img src="/{{request.session.picture}}" height="50px" width="50px" style="border-radius:50%; object-fit:cover;">
+            <b class="text-light">{{request.session.name}}</b>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row menu bg-mycolor3" style="min-height:40px;">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-10">
+            <!--start menu-->
+            <nav class="navbar navbar-expand-lg bg-body-tertiary p-0" id="menu">
+              <div class="container-fluid">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/home/"><i class="fa-solid fa-house"></i> Home</a>
+                      </li>
+                      <li class="nav-item">
+                      <a class="nav-link" href="/allservices/"><i class="fa-solid fa-bell-concierge"></i> Book Services</a>
+                      </li>
+                      <li class="nav-item">
+                      <a class="nav-link" href="/about/"><i class="fa-regular fa-address-card"></i> About us</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/faq/"><i class="fa-solid fa-question"></i> FAQs</a>
+                      </li>
+                      <li class="nav-item">
+                      <a class="nav-link" href="/contact/"><i class="fa-regular fa-address-book"></i> Contact Us</a>
+                      </li>
+                      {% if not request.session.email %}
+                      <li class="nav-item">
+                      <a class="nav-link" href="/login/"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                      </li>
+                       <li class="nav-item">
+                      <a class="nav-link" href="/register/">Registration</a>
+                      </li>
+                      {% else %}
+                      <li class="nav-item">
+                      <a class="nav-link" href="/bookHistory/"><i class="fa-solid fa-database fa-flip"></i> Booking History</a>
+                      </li>
+                      <li class="nav-item">
+                      <a class="nav-link" href="/myprofile/"> My Profile</a>
+                      </li>
+                      <li class="nav-item">
+                      <a class="nav-link" href="/logout/"> Log Out</a>
+                      </li>
+                      {% endif %}
+
+
+
+                  </ul>
+
+                </div>
+              </div>
+            </nav>
+            <!--end menu-->
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+    <div class="row">
+    <div class="col-sm-12" style="min-height:500px;">
+      {% block childpage %}
+
+      {% endblock %}
+    </div>
+  </div>
+    <div class="row ufooter">
+      <footer class="bg-mycolor2 text-dark pt-4">
+  <div class="container">
+    <div class="row">
+      <!-- Categories Section -->
+      <div class="col-md-3">
+        <h5 class="text-light">Categories</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-decoration-none text-dark"><i class="fa-solid fa-angles-right" style="color: white"></i> Car Wash</a></li>
+          <li><a href="#" class="text-decoration-none text-dark"><i class="fa-solid fa-angles-right" style="color: white"></i> Carpentry</a></li>
+          <li><a href="#" class="text-decoration-none text-dark"><i class="fa-solid fa-angles-right" style="color: white"></i> Cleaning</a></li>
+          <li><a href="#" class="text-decoration-none text-dark"><i class="fa-solid fa-angles-right" style="color: white"></i> Computer</a></li>
+        </ul>
+      </div>
+      <!-- Quick Links Section -->
+      <div class="col-md-3">
+        <h5 class="text-light">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-decoration-none text-dark"><i class="fa-solid fa-angles-right" style="color: white"></i> About Us</a></li>
+          <li><a href="#" class="text-decoration-none text-dark"><i class="fa-solid fa-angles-right" style="color: white"></i> Contact Us</a></li>
+          <li><a href="#" class="text-decoration-none text-dark"><i class="fa-solid fa-angles-right" style="color: white"></i> FAQ</a></li>
+          <li><a href="#" class="text-decoration-none text-dark"><i class="fa-solid fa-angles-right" style="color: white"></i> Blog</a></li>
+        </ul>
+      </div>
+      <!-- Contact Us Section -->
+      <div class="col-md-3">
+        <h5 class="text-light">Contact Us</h5>
+        <ul class="list-unstyled lh-lg">
+          <li><i class="fa-solid fa-building fa-flip fa-2x" style="color: white;"></i>&nbsp;&nbsp;70-B Awas Vikas Colony Unnao</li>
+          <li><i class="fa-solid fa-phone fa-beat-fade fa-2x" style="color: white;"></i>&nbsp;&nbsp;7985984543</li>
+          <li><i class="fa-solid fa-envelope fa-2x" style="color: white;"></i>&nbsp;&nbsp;titiksha638@gmail.com</li>
+        </ul>
+      </div>
+      <!-- Social Links Section -->
+      <div class="col-md-3">
+        <h5 class="text-light ms-3">Social Links</h5>
+        <ul class="list-unstyled d-flex">
+          <li><a href="#" class="text-decoration-none text-light fa-2x mx-2"><i class="fa-brands fa-facebook fa-flip" style="color: #ffffff;"></i></a></li>
+          <li><a href="#" class="text-decoration-none text-light fa-2x mx-2"><i class="fa-brands fa-x-twitter fa-fade"></i></a></li>
+          <li><a href="#" class="text-decoration-none text-light fa-2x mx-2"><i class="fa-brands fa-instagram fa-beat-fade"></i></a></li>
+        </ul>
+        <div class="mt-3">
+          <img src="{% static 'images/googleplay.png' %}" class="button-photo">
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </div>
+     <div class="row bfooter py-2">
+    <div class="col-sm-6"><b class="txt-color1">Developed by :</b> Titiksha</div>
+    <div class="col-sm-6"><b class="txt-color1">Copyright to &copy; </b>Techpile Technologies</div>
+  </div>
+ </div>
+<script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</body>
+</html>

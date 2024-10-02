@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<style>
+    .accordion-item{
+    border:1px solid black;
+    border-radius:4px;
+    box-shadow:4px 4px 10px black;
+    }
+</style>
+<div class="container">
+    <div class="row my-4">
+        <div class="fs-3 title-1 text-center">Popular<b class="txt-color1"> FAQs</b></div>
+        <i class="title text-center">Frequently Asked Questions</i>
+        <div class="col-sm-2 my-4"></div>
+        <div class="col-sm-8 my-4">
+            <div class="accordion" id="accordionExample">
+                  <div class="accordion-item mb-3">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed bg-mycolor2 text-light fs-5 text-li" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            What is CityClave?
+                          </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        CityClave is a platform that connects users with a wide range of home service professionals, including repair technicians, beauticians, and cleaners, making it easy to book reliable services for your home and personal needs.
+                      </div>
+                    </div>
+                   </div>
+                  <div class="accordion-item mb-3">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed bg-mycolor3 text-light fs-5 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            What types of services does CityClave offer?
+                          </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        CityClave offers a comprehensive list of services, including plumbing, electrical repairs, beauty treatments, cleaning,Fitness & Wellness , and more.
+                      </div>
+                    </div>
+                   </div>
+                  <div class="accordion-item mb-3">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed bg-mycolor2 text-light fs-5 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            How do I book a service on CityClave?
+                          </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            You can book a service through our user-friendly app or website by selecting the service you need, choosing a professional, and scheduling a time that suits your convenience.
+                          </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item mb-3">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed bg-mycolor3 text-light fs-5 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Are the service providers on CityClave verified?
+                          </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        Yes, all service providers on CityClave are carefully vetted and trained to ensure they deliver high-quality work and reliability.
+                      </div>
+                    </div>
+                   </div>
+                  <div class="accordion-item mb-3">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed bg-mycolor2 text-light fs-5 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            How does CityClave ensure transparent pricing?
+                          </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            CityClave offers clear and upfront pricing with no hidden fees. The cost of services is communicated to you before you confirm your booking.
+                          </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item mb-3">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed bg-mycolor3 text-light fs-5 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            What if I am not satisfied with the service I received?
+                          </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        If you’re not satisfied with the service, please contact our customer support team. We offer a satisfaction guarantee and will work to resolve any issues or provide a refund if necessary.
+                      </div>
+                    </div>
+                   </div>
+                  <div class="accordion-item mb-3">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed bg-mycolor2 text-light fs-5 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                            Are there any additional charges for booking through CityClave?
+                          </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            No, CityClave charges no additional fees beyond the quoted price for the service. All costs are clearly outlined before you finalize your booking.
+                          </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item mb-3">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed bg-mycolor3 text-light fs-5 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            Can I choose a specific service provider?
+                          </button>
+                    </h2>
+                    <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        Yes, you can select a specific service provider based on their profile, ratings, and reviews available on the platform.
+                      </div>
+                    </div>
+                   </div>
+                  <div class="accordion-item mb-3">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed bg-mycolor2 text-light fs-5 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                            Are there any ongoing promotions or discounts available?
+                          </button>
+                        </h2>
+                        <div id="collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                              CityClave may offer promotions and discounts from time to time. Check our app or website for the latest offers and deals.
+                          </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item mb-3">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed bg-mycolor3 text-light fs-5 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                            Can I read reviews about the service providers?
+                          </button>
+                        </h2>
+                        <div id="collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                               Yes, CityClave features genuine reviews from other users to help you make informed decisions about which service provider to choose.
+                          </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

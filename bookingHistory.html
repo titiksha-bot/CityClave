@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<div class="row mt-3" id="offeredservices">
+    <p class="fs-3 text-center mt-5">Your <b class="txt-color1">Booking History</b></p>
+    {% for s in data%}
+    <div class="col-sm-1"></div>
+    <!--Booking History div starts here-->
+    <div class="col-sm-10 mt-2 p-3">
+        <div class="card text-center">
+          <div class="card-header">
+            <div class="row">
+                <div class="col-sm-2">Booked On: {{s.reqdate}}</div>
+                <div class="col-sm-4">Appointment Date:</div>
+                <div class="col-sm-4">Proposed Payment: 3000 INR</div>
+                <div class="col-sm-2 float-end">Booking Id: 101</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Provider: Kaushiki Chaubey(Kaushiki Makeup Center)</h5>
+            <p class="card-text">Provider Address: Plot No. 43 Vikas Nagar Lucknow 226022</p>
+
+          </div>
+          <div class="card-footer text-muted bg-danger" >
+            <div class="row">
+                <div class="col-sm-6">Current Status: Pending</div>
+                <div class="col-sm-6 float-end">Provider Contact Number: 8765438765</div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!--Booking History div ends here-->
+    <div class="col-sm-1"></div>
+    {% endfor %}
+</div>
+{% endblock %}

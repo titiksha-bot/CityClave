@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<style>
+ .login-button{
+ border:none;
+ color:white;
+ font-weight:bold;
+ box-shadow:3px 3px 10px black;
+ }
+ .login-button:hover{
+ background:white;
+ color:#a1887f;
+ box-shadow:3px 3px 10px #a1887f;
+ }
+ .login-form{
+ border-radius:15px;
+ box-shadow: 5px 5px 10px black;
+ }
+</style>
+<!--start heading-->
+<div class="row my-3">
+    <div class="col-sm-5 mx-auto text-center">
+        <p class="fs-3"><b class="txt-color1">LOGIN</b> Here</p>
+    </div>
+</div>
+<!--end heading-->
+<!--form starts-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 p-5 mb-5 login-form bg-mycolor3">
+            <form method="post" autocomplete="off">
+                {% csrf_token %}
+                <div class="row mt-3">
+                    <div class="col-sm-12">
+                        <p>Email :</p>
+                        <div class="input-group flex-nowrap">
+                          <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                          <input name="email" type="email" class="form-control" placeholder="Enter your Email..." aria-label="Username" aria-describedby="addon-wrapping">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-sm-12">
+                        <p>Password :</p>
+                        <div class="input-group flex-nowrap">
+                          <span class="input-group-text" ><i class="fa-solid fa-lock fa-bounce"></i></span>
+                          <input name="password" type="password" class="form-control" placeholder="Enter your Password..." aria-label="Username" aria-describedby="addon-wrapping">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-sm-5 ">
+                        <div class="input-group flex-nowrap">
+
+                          <input type="submit" class="form-control login-button bg-mycolor2 w-50" value="Login">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>
+<!--form ends-->
+{% endblock %}

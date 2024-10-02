@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<style>
+  .search-bar{
+  box-shadow:4px 4px 15px black;
+  border-radius:8px;
+  }
+  .side-bar{
+  box-shadow:4px 4px 15px black;
+  border-radius:8px;
+  font-size:20px;
+  }
+</style>
+<div class="row heading text-center py-3">
+    <div class="col-sm-6 mx-auto">
+        <p class="fs-3">Book your <b class="txt-color1">Service Provider</b></p>
+    </div>
+</div>
+<!--end heading-->
+<div class="row">
+  <div class="col-sm-6 mx-auto my-5">
+      <form>
+        <div class="input-group search-bar">
+        <input type="text" class="form-control" style="height:55px;" name="search" placeholder="Search Service Providers"> <i class="input-group-text bg-mycolor2">
+          <input type="submit" value="Search Now" style="background:transparent; border:none; color:white;">
+        </i>
+
+    </div>
+      </form>
+  </div>
+  <div class="col-sm-12 mx-auto">
+    <div class="row">
+      <div class="col-sm-3">
+        <ul class="list-group">
+          <li class="list-group-item bg-mycolor2 text-light side-bar">Our Featured Category</li>
+          {% for i in cdata %}
+          <li class="list-group-item">
+            <img src="../{{i.category_picture}}" height="50px" width="50px" class="rounded border border-dark p-1">
+            <a href="/allservices?cid={{i.id}}" class="text-dark" style="text-decoration:none;">{{i.category_name}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-sm-9">
+        <div class="row">
+           {% for x in servicedata %}
+        <div class="col-sm-4 mb-3">
+            <div class="card p-4 mx-3 w-90 border-0 shadow-lg bg-mycolor3 position-relative">
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-mycolor1">&#8377; {{x.discount_price}} <span class="visually-hidden">unread messages</span></span>
+              <img src="../{{x.service_picture}}" class="card-img-top imgzoom" alt="...">
+                <div class="position-absolute top-0 start-5 badge rounded-pill text-bg-light mt-1">{{x.service_category}}</div>
+              <div class="card-body">
+                <h5 class="card-title">{{x.service_category}}</h5>
+                <h6 class="car-subtitle"><b>{{x.provider_name}}</b>
+                <img src="../{{x.provider_picture}}" height="60px" width="60px" class="rounded-circle float-end">
+                </h6>
+                <h6 class="car-subtitle py-2 text-light" ><i class="fa-solid fa-location-dot"></i> {{x.address}}</h6>
+                <p class="card-text"><i class="fa-solid fa-star" style="color: white;"></i><i class="fa-solid fa-star" style="color: white;"></i><i class="fa-solid fa-star" style="color: white;"></i><i class="fa-solid fa-star" style="color: white;"></i><i class="fa-solid fa-star" style="color: white;"></i>
+                <b class="float-end">&#8377;{{x.avg_price}}</b>
+                </p>
+                <div class="mt-3">
+                    <a href="/bookService?msg={{x.id}}" class="btn text-light float-end p-2 bg-mycolor1 border-0">Know More</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
